@@ -6,8 +6,11 @@
 
   <title>ขอโทษนะเธอ ♡</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Itim&family=Mali:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Itim&family=Mali:wght@400;500;600&display=swap');
 
     * {
       box-sizing: border-box;
@@ -16,130 +19,400 @@
     body {
       margin: 0;
       min-height: 100vh;
+
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 30px 20px;
 
-      font-family: 'Mali', cursive;
+      padding: 30px 18px;
+
+      font-family: "Mali", cursive;
       color: #CD5782;
 
+      /* MALLOW FLUFF */
       background-color: #F0EEF3;
+
+      /* POLKA DOT */
       background-image: radial-gradient(
         #C7DAD8 2px,
         transparent 2px
       );
-      background-size: 24px 24px;
+
+      background-size: 25px 25px;
     }
 
     .page {
       width: 100%;
-      max-width: 520px;
+      max-width: 540px;
     }
+
+    /* -------------------------
+       MAIN CARD
+    ------------------------- */
 
     .card {
       position: relative;
-      padding: 42px 28px 36px;
-      text-align: center;
 
-      background: rgba(255, 255, 255, 0.82);
+      width: 100%;
+
+      padding: 38px 28px 35px;
+
+      background: rgba(255, 255, 255, 0.92);
+
       border: 3px solid #DCD3AA;
-      border-radius: 28px;
+
+      border-radius: 30px;
 
       box-shadow:
-        0 12px 30px rgba(205, 87, 130, 0.12);
+        0 15px 35px rgba(205, 87, 130, 0.13);
+
+      text-align: center;
     }
 
-    .heart {
-      font-size: 32px;
-      margin-bottom: 10px;
+    /* -------------------------
+       TOP DECORATION
+    ------------------------- */
+
+    .small-heart {
+      font-size: 28px;
+
+      margin-bottom: 5px;
+
+      color: #CD5782;
     }
 
     h1 {
-      margin: 0 0 12px;
-      font-family: 'Itim', cursive;
-      font-size: 38px;
+      margin: 0;
+
+      font-family: "Itim", cursive;
+
+      font-size: clamp(34px, 8vw, 46px);
+
       font-weight: 400;
+
       color: #CD5782;
     }
 
-    .intro {
-      margin: 0 auto 28px;
-      max-width: 380px;
+    .subtitle {
+      margin: 8px auto 28px;
+
+      max-width: 400px;
+
+      font-size: 14px;
+
       line-height: 1.9;
-      font-size: 15px;
-      color: #6f6468;
+
+      color: #756b70;
+    }
+
+    /* -------------------------
+       COIN
+    ------------------------- */
+
+    .coin-area {
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      gap: 15px;
+
+      margin-bottom: 15px;
     }
 
     .coin {
-      width: 82px;
-      height: 82px;
-      margin: 10px auto 16px;
+      width: 78px;
+      height: 78px;
 
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
 
       border-radius: 50%;
-      background: #DCD3AA;
-      border: 5px solid #C7AD70;
 
-      font-size: 38px;
+      background: #DCD3AA;
+
+      border: 5px solid #C5B77F;
 
       box-shadow:
-        0 5px 0 #b69f68,
-        0 10px 18px rgba(0,0,0,0.12);
+        0 5px 0 #A99A63,
+        0 9px 15px rgba(0,0,0,0.15);
+
+      font-size: 32px;
+
+      user-select: none;
+
+      animation: coinFloat 2s ease-in-out infinite;
     }
 
-    .hint {
-      font-size: 13px;
-      color: #8a7f83;
-      margin-bottom: 24px;
+    @keyframes coinFloat {
+
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+
     }
+
+    .coin-text {
+      text-align: left;
+
+      color: #756b70;
+
+      font-size: 13px;
+
+      line-height: 1.7;
+    }
+
+    .coin-text strong {
+      color: #CD5782;
+    }
+
+    /* -------------------------
+       SCRATCH CARD
+    ------------------------- */
 
     .scratch-box {
+
       position: relative;
+
       width: 100%;
-      min-height: 170px;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 230px;
 
-      padding: 25px;
+      border-radius: 23px;
+
+      overflow: hidden;
 
       background: #C7DAD8;
-      border-radius: 20px;
-      overflow: hidden;
+
+      box-shadow:
+        inset 0 0 0 3px rgba(255,255,255,0.45);
+
+      touch-action: none;
     }
 
+    /* MESSAGE UNDER SCRATCH */
+
     .message {
+
+      position: absolute;
+
+      inset: 0;
+
+      padding: 30px 25px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      text-align: center;
+
       color: #CD5782;
-      font-size: 16px;
-      line-height: 1.9;
+
+      font-size: 15px;
+
+      line-height: 2;
+
       font-weight: 500;
     }
 
-    .scratch-cover {
+    .message-inner {
+      max-width: 390px;
+    }
+
+    .message-title {
+      display: block;
+
+      margin-bottom: 10px;
+
+      font-family: "Itim", cursive;
+
+      font-size: 30px;
+
+      color: #CD5782;
+    }
+
+    /* SCRATCH CANVAS */
+
+    #scratchCanvas {
+
       position: absolute;
+
       inset: 0;
-      background: #aaa9a9;
+
+      width: 100%;
+
+      height: 100%;
+
+      cursor: crosshair;
+
+      touch-action: none;
+    }
+
+    /* -------------------------
+       INSTRUCTION
+    ------------------------- */
+
+    .instruction {
+
+      margin-top: 20px;
+
+      font-size: 12px;
+
+      color: #8b8185;
+
+      line-height: 1.8;
+    }
+
+    .instruction span {
+      color: #CD5782;
+
+      font-weight: 600;
+    }
+
+    /* -------------------------
+       NEXT BUTTON
+    ------------------------- */
+
+    .next-button {
+
+      display: none;
+
+      margin: 22px auto 0;
+
+      padding: 11px 24px;
+
+      border: none;
+
+      border-radius: 999px;
+
+      background: #CD5782;
+
+      color: white;
+
+      font-family: "Mali", cursive;
+
+      font-size: 14px;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 5px 12px rgba(205, 87, 130, 0.25);
+
+      transition: 0.2s;
+    }
+
+    .next-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .next-button.show {
+      display: inline-block;
+    }
+
+    /* -------------------------
+       PROGRESS
+    ------------------------- */
+
+    .progress {
       display: flex;
-      align-items: center;
+
       justify-content: center;
 
-      color: #F0EEF3;
-      font-size: 16px;
-      letter-spacing: 1px;
+      gap: 7px;
+
+      margin-top: 25px;
     }
 
-    .bottom {
-      margin-top: 24px;
-      font-size: 12px;
-      color: #999093;
+    .dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #DCD3AA;
+
+      transition: 0.3s;
     }
+
+    .dot.active {
+      width: 22px;
+
+      border-radius: 20px;
+
+      background: #CD5782;
+    }
+
+    /* -------------------------
+       BOTTOM
+    ------------------------- */
+
+    .bottom-text {
+
+      margin-top: 22px;
+
+      font-size: 11px;
+
+      color: #aaa1a5;
+    }
+
+    /* -------------------------
+       MOBILE
+    ------------------------- */
+
+    @media (max-width: 480px) {
+
+      body {
+        padding: 18px 12px;
+      }
+
+      .card {
+        padding: 30px 18px 28px;
+
+        border-radius: 25px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .subtitle {
+        font-size: 13px;
+      }
+
+      .scratch-box {
+        height: 245px;
+      }
+
+      .message {
+        padding: 25px 18px;
+
+        font-size: 14px;
+      }
+
+      .message-title {
+        font-size: 27px;
+      }
+
+      .coin {
+        width: 70px;
+        height: 70px;
+
+        font-size: 28px;
+      }
+
+    }
+
   </style>
 </head>
+
 
 <body>
 
@@ -147,11 +420,17 @@
 
     <section class="card">
 
-      <div class="heart">♡</div>
+      <!-- TOP -->
 
-      <h1>เรามีอะไรอยากบอก</h1>
+      <div class="small-heart">
+        ♡
+      </div>
 
-      <p class="intro">
+      <h1>
+        เรามีอะไรอยากบอก
+      </h1>
+
+      <p class="subtitle">
         ช่วงนี้เราไม่มีเวลาให้เธอเลยใช่ไหม...
         <br>
         เรามีอะไรอยากบอก
@@ -159,31 +438,440 @@
         แต่ไม่อยากพูดออกมาตรง ๆ
       </p>
 
-      <div class="coin">🪙</div>
 
-      <div class="hint">
-        หยิบเหรียญแล้วขูดดูสิ
+      <!-- COIN -->
+
+      <div class="coin-area">
+
+        <div class="coin">
+          🪙
+        </div>
+
+        <div class="coin-text">
+          หยิบเหรียญในจินตนาการ<br>
+          แล้วค่อย ๆ ขูดดูสิ <strong>♡</strong>
+        </div>
+
       </div>
+
+
+      <!-- SCRATCH CARD -->
 
       <div class="scratch-box">
 
         <div class="message">
-          ข้อความของเราจะอยู่ตรงนี้ ♡
+
+          <div class="message-inner">
+
+            <span class="message-title">
+              ขอโทษนะเธอ
+            </span>
+
+            ช่วงนี้เราอาจไม่มีเวลาให้เธอเท่าที่ควร<br>
+
+            บางครั้งเราหายไป<br>
+
+            บางครั้งก็ตอบช้า<br>
+
+            จนทำให้เธอรู้สึกว่าเราไม่สนใจ
+
+          </div>
+
         </div>
 
-        <div class="scratch-cover">
-          ขูดตรงนี้นะ ♡
-        </div>
+
+        <canvas id="scratchCanvas"></canvas>
 
       </div>
 
-      <div class="bottom">
-        ค่อย ๆ ขูดนะ มีอะไรอยากให้เธอรู้ ♡
+
+      <div class="instruction">
+        <span>ขูดตรงสีเทา</span>
+        ให้ข้อความข้างใต้ค่อย ๆ ปรากฏขึ้นนะ ♡
+      </div>
+
+
+      <!-- NEXT BUTTON -->
+
+      <button
+        class="next-button"
+        id="nextButton">
+        ข้อความต่อไป ♡
+      </button>
+
+
+      <!-- PROGRESS -->
+
+      <div class="progress">
+
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+
+      </div>
+
+
+      <div class="bottom-text">
+        มีบางอย่างที่เราอยากให้เธอรู้จริง ๆ
       </div>
 
     </section>
 
   </main>
+
+
+<script>
+
+  /* ==================================================
+     SCRATCH CARD
+  ================================================== */
+
+  const messages = [
+
+    {
+      title: "ขอโทษนะเธอ",
+      text:
+      `ช่วงนี้เราอาจไม่มีเวลาให้เธอเท่าที่ควร<br>
+      บางครั้งเราหายไป<br>
+      บางครั้งก็ตอบช้า<br>
+      จนทำให้เธอรู้สึกว่าเราไม่สนใจ`
+    },
+
+    {
+      title: "เรารู้แล้วนะ",
+      text:
+      `คำว่า "ยุ่ง"<br>
+      ไม่ควรทำให้เธอต้องรู้สึกเหมือนอยู่คนเดียว<br>
+      เราอาจมีงาน มีเรื่องที่ต้องทำ<br>
+      แต่เราก็ควรแบ่งเวลาให้เธอมากกว่านี้`
+    },
+
+    {
+      title: "เราจะพยายาม",
+      text:
+      `ต่อจากนี้เราอาจจะยังยุ่งอยู่บ้าง<br>
+      แต่เราจะพยายามบอกเธอให้มากขึ้น<br>
+      หาเวลาให้เธอมากขึ้น<br>
+      และจะไม่ทำให้เธอต้องคอยขอเวลาจากเรา`
+    },
+
+    {
+      title: "ยังให้เราง้อได้ไหม?",
+      text:
+      `เราไม่ได้ขอให้เธอหายงอนทันทีนะ<br>
+      แค่อยากให้เธอรู้ว่าเรารู้ว่าเธอรู้สึกยังไง<br>
+      และเราอยากทำให้มันดีขึ้นจริง ๆ<br><br>
+      ขอโทษนะเธอ 🤍`
+    }
+
+  ];
+
+
+  let currentMessage = 0;
+
+  const canvas =
+    document.getElementById("scratchCanvas");
+
+  const ctx =
+    canvas.getContext("2d");
+
+  const box =
+    canvas.parentElement;
+
+  const nextButton =
+    document.getElementById("nextButton");
+
+  const dots =
+    document.querySelectorAll(".dot");
+
+
+  /* ==================================================
+     SET CANVAS SIZE
+  ================================================== */
+
+  function setupCanvas() {
+
+    const rect =
+      box.getBoundingClientRect();
+
+    const pixelRatio =
+      window.devicePixelRatio || 1;
+
+    canvas.width =
+      rect.width * pixelRatio;
+
+    canvas.height =
+      rect.height * pixelRatio;
+
+    canvas.style.width =
+      rect.width + "px";
+
+    canvas.style.height =
+      rect.height + "px";
+
+    ctx.setTransform(
+      pixelRatio,
+      0,
+      0,
+      pixelRatio,
+      0,
+      0
+    );
+
+    /* SILVER COVER */
+
+    const gradient =
+      ctx.createLinearGradient(
+        0,
+        0,
+        rect.width,
+        rect.height
+      );
+
+    gradient.addColorStop(
+      0,
+      "#8f8f8f"
+    );
+
+    gradient.addColorStop(
+      0.5,
+      "#b7b7b7"
+    );
+
+    gradient.addColorStop(
+      1,
+      "#898989"
+    );
+
+    ctx.globalCompositeOperation =
+      "source-over";
+
+    ctx.fillStyle =
+      gradient;
+
+    ctx.fillRect(
+      0,
+      0,
+      rect.width,
+      rect.height
+    );
+
+
+    /* TEXT ON SILVER */
+
+    ctx.fillStyle =
+      "#F0EEF3";
+
+    ctx.font =
+      "500 15px Mali";
+
+    ctx.textAlign =
+      "center";
+
+    ctx.textBaseline =
+      "middle";
+
+    ctx.fillText(
+      "🪙  ขูดตรงนี้นะ  ♡",
+      rect.width / 2,
+      rect.height / 2
+    );
+
+  }
+
+
+  /* ==================================================
+     SCRATCH
+  ================================================== */
+
+  let scratching = false;
+
+  let scratchedPoints = 0;
+
+
+  function scratch(e) {
+
+    if (!scratching) {
+      return;
+    }
+
+    const rect =
+      canvas.getBoundingClientRect();
+
+    const x =
+      e.clientX - rect.left;
+
+    const y =
+      e.clientY - rect.top;
+
+
+    ctx.globalCompositeOperation =
+      "destination-out";
+
+
+    ctx.beginPath();
+
+    ctx.arc(
+      x,
+      y,
+      25,
+      0,
+      Math.PI * 2
+    );
+
+    ctx.fill();
+
+
+    scratchedPoints++;
+
+
+    /* AFTER ENOUGH SCRATCHING */
+
+    if (scratchedPoints > 35) {
+
+      nextButton.classList.add("show");
+
+    }
+
+  }
+
+
+  canvas.addEventListener(
+    "pointerdown",
+    function(e) {
+
+      scratching = true;
+
+      scratchedPoints = 0;
+
+      canvas.setPointerCapture(
+        e.pointerId
+      );
+
+      scratch(e);
+
+    }
+  );
+
+
+  canvas.addEventListener(
+    "pointermove",
+    scratch
+  );
+
+
+  canvas.addEventListener(
+    "pointerup",
+    function() {
+
+      scratching = false;
+
+    }
+  );
+
+
+  canvas.addEventListener(
+    "pointercancel",
+    function() {
+
+      scratching = false;
+
+    }
+  );
+
+
+  /* ==================================================
+     NEXT MESSAGE
+  ================================================== */
+
+  nextButton.addEventListener(
+    "click",
+    function() {
+
+      currentMessage++;
+
+      if (
+        currentMessage >= messages.length
+      ) {
+
+        nextButton.textContent =
+          "ไปหน้าต่อไป ♡";
+
+        nextButton.onclick =
+          function() {
+
+            window.location.href =
+              "apology.html";
+
+          };
+
+        return;
+
+      }
+
+
+      const messageBox =
+        document.querySelector(
+          ".message-inner"
+        );
+
+
+      messageBox.innerHTML = `
+
+        <span class="message-title">
+          ${messages[currentMessage].title}
+        </span>
+
+        ${messages[currentMessage].text}
+
+      `;
+
+
+      nextButton.classList.remove(
+        "show"
+      );
+
+
+      scratchedPoints = 0;
+
+
+      dots.forEach(
+        function(dot, index) {
+
+          dot.classList.toggle(
+            "active",
+            index === currentMessage
+          );
+
+        }
+      );
+
+
+      setupCanvas();
+
+    }
+
+  );
+
+
+  /* ==================================================
+     START
+  ================================================== */
+
+  setupCanvas();
+
+
+  window.addEventListener(
+    "resize",
+    function() {
+
+      setupCanvas();
+
+    }
+  );
+
+</script>
 
 </body>
 </html>
