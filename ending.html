@@ -1,232 +1,474 @@
+```html
 <!DOCTYPE html>
 <html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Always You ♡</title>
+  <title>For You, Always ♡</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Itim&family=Mali:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Itim&family=Kanit:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+    :root {
+      --sugar-cookie: #DCD3AA;
+      --wild-raspberry: #CD5782;
+      --morning-mist: #C7DAD8;
+      --mallow-fluff: #F0EEF3;
+      --text: #5d4c53;
+      --white: #fffdfd;
+    }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       min-height: 100vh;
+      font-family: "Kanit", sans-serif;
+      font-weight: 300;
+      color: var(--text);
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      padding: 20px;
-
-      font-family: "Mali", cursive;
-
-      color: #CD5782;
-
-      background-color: #F0EEF3;
+      background-color: var(--mallow-fluff);
 
       background-image:
         radial-gradient(
-          #C7DAD8 2px,
-          transparent 2px
+          circle,
+          rgba(205, 87, 130, 0.16) 3px,
+          transparent 3.5px
         );
 
-      background-size: 25px 25px;
+      background-size: 28px 28px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 25px 15px;
     }
 
     .page {
       width: 100%;
-      max-width: 540px;
+      max-width: 700px;
+      margin: auto;
     }
 
-    .card {
-      padding: 48px 28px 42px;
+    /* =========================
+       MAIN CARD
+    ========================= */
+
+    .ending-card {
+      position: relative;
+
+      background: rgba(255, 253, 253, 0.94);
+
+      border: 2px solid rgba(205, 87, 130, 0.15);
+
+      border-radius: 35px;
+
+      padding: 55px 45px 50px;
 
       text-align: center;
 
-      background: rgba(255,255,255,0.94);
-
-      border: 3px solid #DCD3AA;
-
-      border-radius: 32px;
-
       box-shadow:
-        0 15px 40px rgba(205,87,130,0.14);
+        0 20px 55px rgba(105, 75, 85, 0.12);
+
+      overflow: hidden;
     }
 
-    .hearts {
-      font-size: 30px;
+    /* =========================
+       DECORATIONS
+    ========================= */
 
-      letter-spacing: 8px;
-
-      margin-bottom: 15px;
+    .heart {
+      position: absolute;
+      color: var(--wild-raspberry);
+      opacity: 0.18;
+      font-size: 35px;
     }
 
-    h1 {
-      margin: 0;
-
-      font-family: "Itim", cursive;
-
-      font-size: 52px;
-
-      font-weight: 400;
-
-      color: #CD5782;
+    .heart.one {
+      top: 25px;
+      left: 30px;
+      transform: rotate(-15deg);
     }
 
-    .main-text {
-      margin: 20px auto;
-
-      max-width: 410px;
-
-      font-size: 15px;
-
-      line-height: 2;
-
-      color: #6d6468;
-    }
-
-    .highlight {
-      display: inline-block;
-
-      margin: 12px 0;
-
-      padding: 8px 18px;
-
-      border-radius: 999px;
-
-      background: #C7DAD8;
-
-      color: #CD5782;
-
-      font-family: "Itim", cursive;
-
+    .heart.two {
+      top: 55px;
+      right: 35px;
+      transform: rotate(15deg);
       font-size: 25px;
     }
 
-    .forever {
-      margin-top: 25px;
+    .heart.three {
+      bottom: 35px;
+      left: 40px;
+      transform: rotate(10deg);
+      font-size: 25px;
+    }
 
-      color: #CD5782;
+    .heart.four {
+      bottom: 25px;
+      right: 35px;
+      transform: rotate(-15deg);
+    }
+
+    /* =========================
+       TOP
+    ========================= */
+
+    .small-text {
+      color: var(--wild-raspberry);
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .main-title {
+      font-family: "Playfair Display", serif;
+      color: var(--wild-raspberry);
+      font-size: clamp(40px, 9vw, 65px);
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: #8b777e;
+      font-size: 15px;
+      margin-bottom: 35px;
+    }
+
+    /* =========================
+       BIG HEART
+    ========================= */
+
+    .big-heart {
+      width: 100px;
+      height: 100px;
+
+      margin: 0 auto 30px;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(205, 87, 130, 0.17),
+          rgba(199, 218, 216, 0.55)
+        );
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 47px;
+
+      animation: heartbeat 2s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.06);
+      }
+    }
+
+    /* =========================
+       MAIN MESSAGE
+    ========================= */
+
+    .message {
+      max-width: 540px;
+      margin: 0 auto;
+
+      font-size: 17px;
+      line-height: 2;
+
+      color: #62545a;
+    }
+
+    .message .highlight {
+      color: var(--wild-raspberry);
+      font-family: "Itim", cursive;
+      font-size: 27px;
+      display: block;
+      margin: 22px 0;
+    }
+
+    /* =========================
+       PROMISE
+    ========================= */
+
+    .promise {
+      margin: 30px auto;
+
+      max-width: 500px;
+
+      padding: 24px 20px;
+
+      background: var(--sugar-cookie);
+
+      border-radius: 25px;
+
+      color: #62545a;
 
       font-family: "Itim", cursive;
 
-      font-size: 34px;
+      font-size: 20px;
+
+      line-height: 1.9;
     }
 
-    .small {
-      margin-top: 28px;
-
-      font-size: 11px;
-
-      color: #aaa1a5;
-
-      line-height: 1.8;
+    .promise::before {
+      content: "♡";
+      display: block;
+      color: var(--wild-raspberry);
+      font-size: 25px;
+      margin-bottom: 5px;
     }
 
-    .back {
-      display: inline-block;
+    /* =========================
+       FINAL TEXT
+    ========================= */
 
-      margin-top: 25px;
+    .final-text {
+      margin-top: 30px;
 
-      color: #CD5782;
+      font-family: "Itim", cursive;
 
-      font-size: 12px;
+      color: var(--wild-raspberry);
 
-      text-decoration: none;
+      font-size: 30px;
 
-      border-bottom: 1px dashed #CD5782;
+      line-height: 1.5;
     }
 
-    @media (max-width: 480px) {
+    .final-text small {
+      display: block;
 
-      .card {
-        padding: 40px 20px 35px;
+      font-family: "Kanit", sans-serif;
+
+      font-size: 13px;
+
+      font-weight: 300;
+
+      color: #8b777e;
+
+      margin-top: 8px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer {
+      margin-top: 35px;
+
+      color: #a18d94;
+
+      font-size: 13px;
+    }
+
+    .footer-heart {
+      color: var(--wild-raspberry);
+      font-size: 18px;
+      margin: 0 5px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      body {
+        padding: 15px 10px;
       }
 
-      h1 {
-        font-size: 43px;
+      .ending-card {
+        padding: 45px 22px 38px;
+
+        border-radius: 28px;
       }
 
-      .main-text {
+      .main-title {
+        font-size: 45px;
+      }
+
+      .subtitle {
         font-size: 14px;
       }
 
-      .forever {
-        font-size: 30px;
+      .big-heart {
+        width: 85px;
+        height: 85px;
+        font-size: 40px;
       }
 
-    }
+      .message {
+        font-size: 15px;
+        line-height: 1.9;
+      }
 
+      .message .highlight {
+        font-size: 24px;
+      }
+
+      .promise {
+        font-size: 18px;
+        line-height: 1.8;
+        padding: 22px 16px;
+      }
+
+      .final-text {
+        font-size: 27px;
+      }
+
+      .heart.one {
+        left: 15px;
+      }
+
+      .heart.two {
+        right: 15px;
+      }
+
+      .heart.three {
+        left: 20px;
+      }
+
+      .heart.four {
+        right: 20px;
+      }
+    }
   </style>
 </head>
 
 
 <body>
 
-  <main class="page">
+  <div class="page">
 
-    <section class="card">
+    <main class="ending-card">
 
-      <div class="hearts">
-        ♡ ♡ ♡
+      <!-- DECORATIVE HEARTS -->
+
+      <div class="heart one">♡</div>
+      <div class="heart two">♡</div>
+      <div class="heart three">♡</div>
+      <div class="heart four">♡</div>
+
+
+      <!-- TOP -->
+
+      <div class="small-text">
+        ONE LAST THING
       </div>
 
-      <h1>
-        ขอบคุณนะเธอ
+
+      <h1 class="main-title">
+        For You ♡
       </h1>
 
-      <div class="main-text">
 
-        เราอาจจะยังไม่เก่งเรื่องการให้เวลา<br>
-        และบางครั้งเราอาจทำให้เธอเสียใจ<br><br>
+      <p class="subtitle">
+        ก่อนที่เธอจะปิดหน้านี้...
+      </p>
 
-        แต่เราอยากให้เธอรู้ว่า<br>
-        เราไม่เคยอยากเสียเธอไปเลย
+
+      <!-- BIG HEART -->
+
+      <div class="big-heart">
+        🤍
+      </div>
+
+
+      <!-- MESSAGE -->
+
+      <div class="message">
+
+        เราไม่รู้ว่าเธอจะรู้สึกยังไง
+        หลังจากได้อ่านทุกอย่างที่เราอยากบอก
+
+        <span class="highlight">
+          แต่เราอยากให้เธอรู้ไว้จริง ๆ ว่า...
+        </span>
+
+        เราอาจให้เวลาเธอได้ไม่เก่งที่สุด
+        อาจมีวันที่เรายุ่ง
+        อาจมีวันที่เราตอบช้า
+        และอาจมีวันที่เราทำให้เธอน้อยใจ
+
+        แต่ไม่มีวันไหนเลย
+        ที่เราไม่รักเธอ
 
       </div>
 
 
-      <div class="highlight">
-        เราจะพยายามให้ดีกว่านี้ ♡
+      <!-- PROMISE -->
+
+      <div class="promise">
+
+        เราจะพยายามให้มากขึ้น
+
+        <br>
+
+        พยายามแบ่งเวลาให้ดีขึ้น
+
+        <br>
+
+        และพยายามดูแลความรู้สึกของเธอ
+        ให้มากกว่าที่ผ่านมา
+
       </div>
 
 
-      <div class="main-text">
+      <!-- FINAL -->
 
-        ขอบคุณที่ยังอยู่กับเรา<br>
-        ขอบคุณที่ยังให้โอกาสเราได้ง้อ
+      <div class="final-text">
+
+        เราอาจให้เวลาได้ไม่เก่ง
+
+        <br>
+
+        แต่เราไม่เคยอยากเสียเธอไปเลย ♡
+
+        <small>
+          ขอบคุณที่ยังอยู่ตรงนี้กับเรานะ
+        </small>
 
       </div>
 
 
-      <div class="forever">
-        Always You ♡
+      <!-- FOOTER -->
+
+      <div class="footer">
+
+        made with
+
+        <span class="footer-heart">
+          ♡
+        </span>
+
+        just for you
+
       </div>
 
+    </main>
 
-      <div class="small">
-        เว็บนี้อาจไม่มีอะไรพิเศษมาก<br>
-        แต่อยากให้เธอรู้ว่าเราตั้งใจทำให้เธอจริง ๆ
-      </div>
-
-
-      <a
-        href="index.html"
-        class="back">
-        กลับไปเริ่มใหม่อีกครั้ง ♡
-      </a>
-
-    </section>
-
-  </main>
+  </div>
 
 </body>
 </html>
+```
