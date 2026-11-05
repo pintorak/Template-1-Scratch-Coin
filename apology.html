@@ -1,731 +1,449 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0">
-
-  <title>For You ♡</title>
-
+  <title>Just For You ♡</title>
 
   <style>
-
-    @import url('https://fonts.googleapis.com/css2?family=Itim&family=Kanit:wght@300;400;500&display=swap');
-
-
-    :root {
-      --sugar: #DCD3AA;
-      --raspberry: #CD5782;
-      --mist: #C7DAD8;
-      --mallow: #F0EEF3;
-      --dark: #704653;
-    }
-
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    :root {
+      --cookie: #DCD3AA;
+      --raspberry: #CD5782;
+      --mist: #C7DAD8;
+      --fluff: #F0EEF3;
+      --text: #6d4f5c;
+      --dark: #9b3e61;
+    }
 
     body {
-
       min-height: 100vh;
+      font-family:
+        "Segoe UI",
+        "Noto Sans Thai",
+        "Tahoma",
+        sans-serif;
 
-      font-family: 'Kanit', sans-serif;
+      color: var(--text);
 
-      font-weight: 300;
-
-      color: var(--dark);
-
-      background-color: var(--mallow);
-
+      background-color: var(--fluff);
       background-image:
-        radial-gradient(
-          circle,
-          rgba(205, 87, 130, 0.18) 2px,
-          transparent 2.5px
-        );
+        radial-gradient(circle, rgba(205, 87, 130, 0.18) 2px, transparent 2px);
+      background-size: 24px 24px;
 
-      background-size: 28px 28px;
-
-      padding: 30px 16px 60px;
-
+      overflow-x: hidden;
     }
-
 
     .page {
-
       width: 100%;
-
-      max-width: 850px;
-
-      margin: auto;
-
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 30px 18px 60px;
     }
 
+    /* HEADER */
 
-    /* ==============================
-       HEADER
-    ============================== */
-
-    .header {
-
+    .top {
       text-align: center;
-
-      margin-bottom: 30px;
-
+      padding: 35px 20px 25px;
     }
 
-
-    .heart {
-
+    .small-title {
+      font-size: 13px;
+      letter-spacing: 4px;
       color: var(--raspberry);
-
-      font-size: 25px;
-
+      font-weight: 700;
+      margin-bottom: 10px;
     }
 
-
-    .header h1 {
-
-      font-family: 'Itim', cursive;
-
-      font-size: clamp(42px, 9vw, 62px);
-
-      color: var(--raspberry);
-
-      font-weight: 400;
-
-      margin: 5px 0 8px;
-
+    h1 {
+      font-size: clamp(32px, 7vw, 60px);
+      color: var(--dark);
+      line-height: 1.1;
+      font-weight: 800;
     }
 
-
-    .header p {
-
-      font-size: 14px;
-
+    .subtitle {
+      margin-top: 14px;
+      font-size: 16px;
       line-height: 1.9;
-
-      color: #795d66;
-
+      color: #846a75;
     }
 
+    /* SECTION */
 
-    /* ==============================
-       SECTION CARD
-    ============================== */
-
-    .section {
-
-      background: rgba(255, 253, 251, 0.95);
-
-      border-radius: 30px;
-
-      padding: 28px 22px;
-
-      margin-bottom: 24px;
-
-      border: 2px solid rgba(205,87,130,0.13);
-
-      box-shadow:
-        0 18px 45px rgba(112,70,83,0.1);
-
+    section {
+      margin-top: 28px;
     }
-
 
     .section-title {
-
       text-align: center;
+      font-size: 24px;
+      color: var(--dark);
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
 
-      font-family: 'Itim', cursive;
-
+    .section-title span {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 3px;
       color: var(--raspberry);
-
-      font-size: 32px;
-
-      font-weight: 400;
-
-      margin-bottom: 8px;
-
+      margin-bottom: 5px;
     }
 
-
-    .section-subtitle {
-
-      text-align: center;
-
-      color: #92727d;
-
-      font-size: 13px;
-
-      margin-bottom: 23px;
-
-    }
-
-
-    /* ==============================
-       PHOTO GALLERY
-    ============================== */
+    /* PHOTO */
 
     .photos {
-
       display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 13px;
-
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
     }
-
 
     .photo {
-
-      width: 100%;
-
-      aspect-ratio: 1 / 1;
-
-      border-radius: 22px;
-
-      overflow: hidden;
-
-      background: var(--mist);
-
-      border: 2px solid rgba(205,87,130,0.12);
-
-      position: relative;
-
+      background: white;
+      padding: 8px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(109, 79, 92, 0.12);
+      transform: rotate(-1deg);
+      transition: 0.3s ease;
     }
 
+    .photo:nth-child(2) {
+      transform: rotate(1.5deg);
+    }
+
+    .photo:nth-child(3) {
+      transform: rotate(-1.5deg);
+    }
+
+    .photo:nth-child(4) {
+      transform: rotate(1deg);
+    }
+
+    .photo:nth-child(5) {
+      transform: rotate(-1deg);
+    }
+
+    .photo:hover {
+      transform: translateY(-6px) rotate(0deg);
+    }
 
     .photo img {
-
-      width: 100%;
-
-      height: 100%;
-
-      object-fit: cover;
-
       display: block;
-
-    }
-
-
-    .photo.empty {
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      color: #8b777d;
-
-      font-size: 13px;
-
-      text-align: center;
-
-      padding: 20px;
-
-    }
-
-
-    .photo.empty span {
-
-      line-height: 1.7;
-
-    }
-
-
-    /* รูปที่ 5 */
-
-    .photo:last-child {
-
-      grid-column: span 2;
-
-      max-width: 50%;
-
-      margin: auto;
-
       width: 100%;
-
+      aspect-ratio: 1 / 1.18;
+      object-fit: cover;
+      border-radius: 12px;
     }
 
+    /* MUSIC */
 
-    /* ==============================
-       MUSIC
-    ============================== */
-
-    .music-box {
-
-      background: var(--mist);
-
-      border-radius: 24px;
-
-      padding: 20px;
-
+    .music-card {
+      max-width: 700px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.88);
+      border: 2px solid rgba(205, 87, 130, 0.18);
+      border-radius: 30px;
+      padding: 28px 24px;
+      box-shadow: 0 12px 35px rgba(109, 79, 92, 0.13);
       text-align: center;
-
     }
-
 
     .music-icon {
-
-      width: 55px;
-
-      height: 55px;
-
-      margin: 0 auto 10px;
-
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 12px;
       border-radius: 50%;
-
-      background: var(--sugar);
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
-      font-size: 23px;
-
-      color: var(--raspberry);
-
+      background: var(--mist);
+      font-size: 28px;
     }
 
-
-    .music-title {
-
-      font-family: 'Itim', cursive;
-
-      font-size: 23px;
-
-      color: var(--raspberry);
-
+    .song-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--dark);
       margin-bottom: 4px;
-
     }
 
-
-    .music-sub {
-
-      color: #795d66;
-
-      font-size: 12px;
-
-      margin-bottom: 15px;
-
+    .song-subtitle {
+      font-size: 13px;
+      color: #987d87;
+      margin-bottom: 18px;
     }
-
 
     audio {
-
       width: 100%;
-
-      max-width: 500px;
-
+      max-width: 560px;
+      height: 42px;
     }
 
+    /* LYRICS */
 
-    /* ==============================
-       PERSONAL MESSAGE
-    ============================== */
-
-    .letter {
+    .lyrics {
+      max-width: 620px;
+      margin: 25px auto 0;
+      padding: 25px 22px;
 
       background:
-
         linear-gradient(
           135deg,
-          rgba(240,238,243,0.8),
-          rgba(199,218,216,0.55)
+          rgba(199,218,216,0.55),
+          rgba(240,238,243,0.9)
         );
 
       border-radius: 24px;
-
-      padding: 28px 23px;
-
-      position: relative;
-
+      border: 1px solid rgba(205, 87, 130, 0.16);
     }
 
-
-    .letter::before {
-
-      content: "♡";
-
-      position: absolute;
-
-      top: 12px;
-
-      right: 18px;
-
-      color: rgba(205,87,130,0.4);
-
-      font-size: 24px;
-
-    }
-
-
-    .letter p {
-
-      color: #654d56;
-
-      font-size: 15px;
-
-      line-height: 2.1;
-
-      margin-bottom: 15px;
-
-    }
-
-
-    .letter p:last-child {
-
-      margin-bottom: 0;
-
-    }
-
-
-    .signature {
-
-      text-align: right;
-
-      font-family: 'Itim', cursive;
-
+    .lyrics-label {
+      font-size: 11px;
+      letter-spacing: 3px;
       color: var(--raspberry);
-
-      font-size: 23px;
-
-      margin-top: 20px;
-
+      font-weight: 800;
+      margin-bottom: 13px;
     }
 
+    .lyrics p {
+      font-size: 18px;
+      line-height: 2;
+      color: #704f5d;
+      font-weight: 600;
+    }
 
-    /* ==============================
-       BUTTON
-    ============================== */
+    .lyrics p span {
+      color: var(--raspberry);
+    }
 
-    .button-area {
+    /* MESSAGE */
 
+    .message-card {
+      max-width: 720px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.9);
+      border-radius: 30px;
+      padding: 35px 30px;
+      box-shadow: 0 12px 35px rgba(109, 79, 92, 0.12);
+      border: 1px solid rgba(205, 87, 130, 0.12);
       text-align: center;
-
-      margin-top: 28px;
-
     }
 
+    .message-card p {
+      font-size: 16px;
+      line-height: 2.15;
+      color: #745b65;
+      white-space: pre-line;
+    }
 
-    .continue-button {
+    .heart {
+      font-size: 28px;
+      margin-top: 20px;
+    }
 
-      display: inline-block;
+    /* BUTTON */
 
-      border: none;
+    .ending-btn {
+      display: block;
+      width: fit-content;
+      margin: 30px auto 0;
+
+      padding: 14px 28px;
 
       background: var(--raspberry);
-
       color: white;
 
-      padding: 13px 30px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 15px;
 
       border-radius: 999px;
 
-      font-family: 'Kanit', sans-serif;
+      box-shadow: 0 8px 20px rgba(205, 87, 130, 0.28);
 
-      font-size: 14px;
-
-      text-decoration: none;
-
-      box-shadow:
-        0 9px 20px rgba(205,87,130,0.25);
-
-      transition:
-        transform 0.2s,
-        box-shadow 0.2s;
-
+      transition: 0.25s ease;
     }
 
-
-    .continue-button:hover {
-
-      transform: translateY(-2px);
-
-      box-shadow:
-        0 12px 25px rgba(205,87,130,0.32);
-
+    .ending-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(205, 87, 130, 0.35);
     }
 
+    /* FOOTER */
 
-    /* ==============================
-       MOBILE
-    ============================== */
+    footer {
+      text-align: center;
+      margin-top: 45px;
+      color: #a48791;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
 
-    @media (max-width: 600px) {
+    /* MOBILE */
 
-      body {
-
-        padding:
-          20px 12px 45px;
-
+    @media (max-width: 700px) {
+      .page {
+        padding: 20px 14px 45px;
       }
 
-
-      .section {
-
-        padding:
-          24px 15px;
-
-        border-radius: 25px;
-
+      .top {
+        padding-top: 25px;
       }
-
 
       .photos {
-
-        gap: 9px;
-
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
       }
 
-
-      .photo {
-
-        border-radius: 17px;
-
+      .photo:nth-child(5) {
+        grid-column: 1 / -1;
+        width: 55%;
+        margin: 0 auto;
       }
 
-
-      .photo:last-child {
-
-        max-width: 100%;
-
+      .music-card {
+        padding: 24px 18px;
       }
 
-
-      .letter {
-
-        padding:
-          25px 18px;
-
+      .lyrics {
+        padding: 22px 18px;
       }
 
-
-      .letter p {
-
-        font-size: 14px;
-
-        line-height: 2;
-
+      .lyrics p {
+        font-size: 16px;
       }
 
+      .message-card {
+        padding: 28px 20px;
+      }
+
+      .message-card p {
+        font-size: 15px;
+      }
     }
 
+    @media (max-width: 420px) {
+      h1 {
+        font-size: 34px;
+      }
+
+      .photos {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .photo:nth-child(5) {
+        width: 65%;
+      }
+    }
   </style>
-
 </head>
-
 
 <body>
 
+  <div class="page">
 
-  <main class="page">
+    <!-- HEADER -->
 
+    <header class="top">
+      <div class="small-title">A LITTLE THING FOR YOU</div>
 
-    <!-- ==========================
-         HEADER
-    =========================== -->
+      <h1>Just For You ♡</h1>
 
-    <header class="header">
-
-      <div class="heart">♡</div>
-
-      <h1>Just For You</h1>
-
-      <p>
-        ถ้าเธอมาถึงตรงนี้แล้ว<br>
-        เราอยากให้เธอได้เห็นอีกนิดนึง
+      <p class="subtitle">
+        เพราะมีบางอย่างที่เราอยากบอกเธอ<br>
+        และอยากให้เธอรู้ว่าทุกอย่างที่เราทำ เราตั้งใจทำเพื่อเธอ
       </p>
-
     </header>
 
 
-    <!-- ==========================
-         PHOTOS
-    =========================== -->
+    <!-- PHOTOS -->
 
-    <section class="section">
+    <section>
 
-      <h2 class="section-title">
-        Our Little Memories
-      </h2>
-
-      <p class="section-subtitle">
-        รูปของเราที่อยากเก็บไว้ด้วยกัน ♡
-      </p>
-
+      <div class="section-title">
+        <span>OUR MEMORIES</span>
+        รูปของเรา ♡
+      </div>
 
       <div class="photos">
 
-
-        <!-- รูปที่ 1 -->
-
         <div class="photo">
-
-          <img
-            src="assets/images/photo1.jpg"
-            alt="Our memory 1">
-
+          <img src="assets/images/photo1.jpg" alt="Our photo 1">
         </div>
 
-
-        <!-- รูปที่ 2 -->
-
         <div class="photo">
-
-          <img
-            src="assets/images/photo2.jpg"
-            alt="Our memory 2">
-
+          <img src="assets/images/photo2.jpg" alt="Our photo 2">
         </div>
 
-
-        <!-- รูปที่ 3 -->
-
         <div class="photo">
-
-          <img
-            src="assets/images/photo3.jpg"
-            alt="Our memory 3">
-
+          <img src="assets/images/photo3.jpg" alt="Our photo 3">
         </div>
 
-
-        <!-- รูปที่ 4 -->
-
         <div class="photo">
-
-          <img
-            src="assets/images/photo4.jpg"
-            alt="Our memory 4">
-
+          <img src="assets/images/photo4.jpg" alt="Our photo 4">
         </div>
 
-
-        <!-- รูปที่ 5 -->
-
         <div class="photo">
-
-          <img
-            src="assets/images/photo5.jpg"
-            alt="Our memory 5">
-
+          <img src="assets/images/photo5.jpg" alt="Our photo 5">
         </div>
-
 
       </div>
 
     </section>
 
 
-    <!-- ==========================
-         MUSIC
-    =========================== -->
+    <!-- MUSIC -->
 
-    <section class="section">
+    <section>
 
-      <h2 class="section-title">
-        A Song For You
-      </h2>
+      <div class="section-title">
+        <span>OUR SONG</span>
+        เพลงที่อยากให้เธอฟัง ♡
+      </div>
 
-      <p class="section-subtitle">
-        เพลงนี้เราอยากให้เธอฟังตอนอ่านหน้านี้ ♡
-      </p>
-
-
-      <div class="music-box">
+      <div class="music-card">
 
         <div class="music-icon">
-          ♪
+          🎵
         </div>
 
-
-        <div class="music-title">
+        <div class="song-title">
           Our Song
         </div>
 
-
-        <div class="music-sub">
-          เพลงของเรา
+        <div class="song-subtitle">
+          กดฟังเพลงนี้ไปพร้อมกับอ่านสิ่งที่เราอยากบอกนะ
         </div>
-
 
         <audio controls>
-
-          <source
-            src="assets/music/song.mp3"
-            type="audio/mpeg">
-
+          <source src="assets/music/song.mp3" type="audio/mpeg">
           เบราว์เซอร์ของเธอไม่รองรับการเล่นเพลง
-
         </audio>
 
-      </div>
 
-    </section>
+        <!-- IMPORTANT LYRIC -->
 
+        <div class="lyrics">
 
-    <!-- ==========================
-         PERSONAL MESSAGE
-    =========================== -->
+          <div class="lyrics-label">
+            MY FAVORITE PART
+          </div>
 
-    <section class="section">
+          <p>
+            คนที่ดึงฉัน จากฝันร้าย<br>
+            <span>Baby คือของที่หล่นหาย</span><br>
+            ฉันให้สัญญา กับ ท้องฟ้า<br>
+            <span>ว่าเธอคือคนสุดท้าย</span>
+          </p>
 
-      <h2 class="section-title">
-        A Little Message
-      </h2>
-
-      <p class="section-subtitle">
-        สิ่งที่เราอยากบอกเธอจริง ๆ
-      </p>
-
-
-      <div class="letter">
-
-        <p>
-          เธอรู้ไหม เราอาจจะไม่ได้เป็นคนที่เก่งเรื่องการแบ่งเวลา
-          หรือเก่งเรื่องการแสดงออกในทุก ๆ ครั้ง
-          แต่ไม่ได้แปลว่าเรารักเธอน้อยลงเลยนะ
-        </p>
-
-
-        <p>
-          เรารู้ว่าบางครั้งการที่เราหายไป ตอบช้า
-          หรือไม่มีเวลาให้เธอมากพอ
-          มันทำให้เธอรู้สึกเหมือนเราไม่ใส่ใจ
-          และเราขอโทษจริง ๆ
-        </p>
-
-
-        <p>
-          เราอยากให้เธอรู้ว่า
-          ต่อให้วันหนึ่งเราจะยุ่งแค่ไหน
-          เธอก็ยังเป็นคนที่เราอยากมีอยู่ในชีวิตเสมอ
-        </p>
-
-
-        <p>
-          เราอาจไม่ได้สัญญาว่าจะไม่ยุ่งอีกเลย
-          แต่เราสัญญาว่าจะพยายามดูแลความรู้สึกของเธอ
-          ให้ดีกว่าที่ผ่านมา
-        </p>
-
-
-        <div class="signature">
-          รักเธอนะ ♡
         </div>
 
       </div>
@@ -733,25 +451,55 @@
     </section>
 
 
-    <!-- ==========================
-         NEXT
-    =========================== -->
+    <!-- PERSONAL MESSAGE -->
 
-    <div class="button-area">
+    <section>
 
-      <a
-        href="ending.html"
-        class="continue-button">
+      <div class="section-title">
+        <span>FROM ME TO YOU</span>
+        ข้อความที่อยากบอกเธอ ♡
+      </div>
 
-        อ่านต่ออีกนิด ♡
+      <div class="message-card">
 
-      </a>
+        <p>
+เราอาจไม่ได้เก่งเรื่องการพูด
+และบางครั้งก็ไม่รู้ว่าจะบอกความรู้สึกออกมายังไง
 
-    </div>
+แต่เราอยากให้เธอรู้ว่า
+เธอเป็นคนสำคัญมาก ๆ สำหรับเรา
+
+ขอบคุณที่อยู่ข้าง ๆ กัน
+ขอบคุณสำหรับทุกอย่างที่เธอทำให้เรา
+และขอบคุณที่ยังอยู่ตรงนี้
+
+เราอาจไม่สมบูรณ์แบบ
+แต่อยากพยายามทำให้ความสัมพันธ์ของเราดีขึ้นเรื่อย ๆ
+
+รักเธอนะ ♡
+        </p>
+
+        <div class="heart">
+          ♡
+        </div>
+
+      </div>
+
+    </section>
 
 
-  </main>
+    <!-- ENDING -->
 
+    <a href="ending.html" class="ending-btn">
+      ไปหน้าสุดท้ายของเรา ♡
+    </a>
+
+
+    <footer>
+      Made with love ♡
+    </footer>
+
+  </div>
 
 </body>
 </html>
